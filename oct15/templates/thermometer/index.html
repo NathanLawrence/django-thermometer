@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Available Thermometer Pages</h1>
+<ul>
+	{% for therm in therms %}
+		<li>{{therm.name|capfirst}}: <a href='{% url 'fetchsquare' id=therm.id%}'>Square</a></li>
+	{% endfor %}
+</ul>
+{% endblock content %}
